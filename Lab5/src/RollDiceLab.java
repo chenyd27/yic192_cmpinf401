@@ -18,6 +18,7 @@ public class RollDiceLab {
     }
     public static void RollDice(int time, Random ran){
         int[] timeCollection = new int[13];
+        double[] probabilistic = new double[]{0,0,1.0/36,2.0/36,3.0/36,4.0/36,5.0/36,6.0/36,5.0/36,4.0/36,3.0/36,2.0/36,1.0/36};
         for(int i = 0;i < time;i++){
             int dice1 = ran.nextInt(6) + 1;
             int dice2 = ran.nextInt(6) + 1;
@@ -26,6 +27,7 @@ public class RollDiceLab {
         for(int i = 2;i <= 12;i++){
             double frac = timeCollection[i] * 1.0 / time;
             System.out.println("Value " + i + " appear " + timeCollection[i] + " times. And its fraction is: " + frac);
+            System.out.println("the ideal fraction of Value " + i  + " is: " + probabilistic[i]);
         }
         System.out.println();
     }
