@@ -10,11 +10,12 @@ public class Entree {
     private String description;
     private int calories;
     public Entree(){}
-    public Entree(String name,String desc,int cal){
+    public Entree(String name,String desc,int cal){ // constructor
         this.name = name;
         this.description = desc;
         this.calories = cal;
     }
+    // getter and setter
     public String getName() {
         return name;
     }

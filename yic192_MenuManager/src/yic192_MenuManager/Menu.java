@@ -20,7 +20,7 @@ public class Menu {
         this.salad = null;
         this.dessert = null;
     }
-    public Menu(String name,Entree entree,Salad salad){
+    public Menu(String name,Entree entree,Salad salad){ // constructor with different object
         this.name = name;
         this.entree = entree;
         this.salad = salad;
@@ -42,12 +42,12 @@ public class Menu {
         this.dessert = dessert;
     }
     public int totalCalories(){
-        Entree et = getEntree();
+        Entree et = getEntree(); // initialize all the objects
         Side s = getSide();
         Salad sal = getSalad();
         Dessert des = getDessert();
         int sum = 0;
-        if(et != null) sum += et.getCalories();
+        if(et != null) sum += et.getCalories(); // judge if there is the object
         if(s != null) sum += s.getCalories();
         if(sal != null) sum += sal.getCalories();
         if(des != null) sum += des.getCalories();
@@ -59,6 +59,7 @@ public class Menu {
         Salad sal = getSalad();
         Dessert des = getDessert();
         String res = "";
+     // judge if there is the object
         if(et != null){
             String tmp = "Entree: " + et.getName() + ". " + et.getDescription() + '\n';
             res += tmp;
@@ -89,7 +90,8 @@ public class Menu {
         }
         return res;
     }
-
+    
+    // getter and setter
     public Entree getEntree() {
         return entree;
     }

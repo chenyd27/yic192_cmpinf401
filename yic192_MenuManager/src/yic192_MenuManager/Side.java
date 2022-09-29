@@ -9,13 +9,13 @@ public class Side {
     private String name;
     private String description;
     private int calories;
-    public Side(){}
-    public Side(String name,String desc,int cal){
+    public Side(){} // default constructor
+    public Side(String name,String desc,int cal){   // constructor
         this.name = name;
         this.description = desc;
         this.calories = cal;
     }
-
+    // setter and getter
     public String getName() {
         return name;
     }

@@ -9,13 +9,13 @@ public class Dessert {
     private String name;
     private String description;
     private int calories;
-    public Dessert(){}
-    public Dessert(String name,String desc,int cal){
+    public Dessert(){} // default constructor
+    public Dessert(String name,String desc,int cal){ // constructor
         this.name = name;
         this.description = desc;
         this.calories = cal;
     }
-
+    // getter and setter
     public String getName() {
         return name;
     }
