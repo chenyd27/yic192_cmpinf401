@@ -5,6 +5,7 @@ public class Logarithm {
     public static void main(String[] args) {
         String inputBase = JOptionPane.showInputDialog("Please input the base number: ");
         int base = Integer.parseInt(inputBase);
+        // input the correct base number
         while(base <= 1){
             inputBase = JOptionPane.showInputDialog("Wrong number, please input another base number: ");
             base = Integer.parseInt(inputBase);
@@ -12,6 +13,7 @@ public class Logarithm {
         System.out.println("Successful create the base number");
         String inputLog = JOptionPane.showInputDialog("Please input the number you want to calculate: ");
         int log = Integer.parseInt(inputLog);
+        // input the correct log number
         while(log == 0){
             inputLog = JOptionPane.showInputDialog("Wrong number, please input another number you want to calculate: ");
             log = Integer.parseInt(inputLog);

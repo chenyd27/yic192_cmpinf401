@@ -9,6 +9,7 @@ public class RollDiceLab {
             String input = JOptionPane.showInputDialog("please input the times of rolls");
             int times = Integer.parseInt(input);
             RollDice(times,random);
+            // press 1 to continue
             String ifContinue = JOptionPane.showInputDialog("Press 1 and then enter if you want to continue");
             int cont = Integer.parseInt(ifContinue);
             if(cont == 1) continue;
@@ -18,6 +19,7 @@ public class RollDiceLab {
     }
     public static void RollDice(int time, Random ran){
         int[] timeCollection = new int[13];
+        // theoretical possibility
         double[] probabilistic = new double[]{0,0,1.0/36,2.0/36,3.0/36,4.0/36,5.0/36,6.0/36,5.0/36,4.0/36,3.0/36,2.0/36,1.0/36};
         for(int i = 0;i < time;i++){
             int dice1 = ran.nextInt(6) + 1;
@@ -25,6 +27,7 @@ public class RollDiceLab {
             timeCollection[dice2 + dice1] += 1;
         }
         for(int i = 2;i <= 12;i++){
+        	// actual possibility
             double frac = timeCollection[i] * 1.0 / time;
             System.out.println("Value " + i + " appear " + timeCollection[i] + " times. And its fraction is: " + frac);
             System.out.println("the ideal fraction of Value " + i  + " is: " + probabilistic[i]);

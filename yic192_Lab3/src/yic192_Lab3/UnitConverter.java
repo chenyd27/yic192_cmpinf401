@@ -12,6 +12,7 @@ public class UnitConverter {
         double number = Double.parseDouble(input.substring(0,index));
         String unit = input.substring(index + 1);
         String ans = "";
+        // convert number
         if(unit.equals("cm")){
             unit = "in";
             number = number * 2.54;
@@ -43,6 +44,7 @@ public class UnitConverter {
         return ans;
     }
     public static void main(String[] args) {
+    	// input a parameter that need to be converted
         String input = JOptionPane.showInputDialog("please input a distance you want to convert");
         String ans = converter(input);
         if(ans != ""){
