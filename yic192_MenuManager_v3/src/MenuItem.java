@@ -1,3 +1,9 @@
+/**
+ * Class MenuItem
+ * author : Yida Chen
+ * created: 11/23/2022
+ */
+
 import java.util.ArrayList;
 
 public class MenuItem extends Object {

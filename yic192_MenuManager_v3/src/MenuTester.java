@@ -1,7 +1,7 @@
 /**
- * Class Menu
+ * Class MenuTester
  * author : Yida Chen
- * created: 10/23/2022
+ * created: 11/23/2022
  */
 
 public class MenuTester {

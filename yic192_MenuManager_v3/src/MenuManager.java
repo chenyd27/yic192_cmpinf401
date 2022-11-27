@@ -1,3 +1,9 @@
+/**
+ * Class MenuManager
+ * author : Yida Chen
+ * created: 11/23/2022
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
