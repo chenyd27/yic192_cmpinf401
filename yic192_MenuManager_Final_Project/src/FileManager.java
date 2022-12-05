@@ -1,14 +1,10 @@
-/**
- * Class Menu
- * author : Yida Chen
- * created: 10/23/2022
- */
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FileManager {
 	/**
@@ -47,7 +43,7 @@ public class FileManager {
 		fileReader.close();
 		return menuItems;
 	}
-	public static void writeMenu( String fileName, ArrayList<Menu> menus ) throws IOException{
+	public static void writeMenus( String fileName, List<Menu> menus ) throws IOException{
 		FileWriter fileWriter = new FileWriter(fileName);
 		for(Menu menu : menus){
 			String data = menu.toString() + "\n" + menu.description() + menu.priceAndCalories(menu.totalPrice(),menu.totalCalories());

@@ -1,3 +1,4 @@
+
 /**
  * Class Menu
  * author : Yida Chen
@@ -18,21 +19,21 @@ public class Menu {
         this.salad = null;
         this.dessert = null;
     }
-    public Menu(String name,Entree entree,Salad salad){ // constructor with different object
+    public Menu(String name, Entree entree, Salad salad){ // constructor with different object
         this.name = name;
         this.entree = entree;
         this.salad = salad;
         this.side = null;
         this.dessert = null;
     }
-    public Menu(String name,Entree entree,Side side){
+    public Menu(String name, Entree entree, Side side){
         this.name = name;
         this.entree = entree;
         this.salad = null;
         this.side = side;
         this.dessert = null;
     }
-    public Menu(String name,Entree entree,Side side,Salad salad,Dessert dessert){
+    public Menu(String name, Entree entree, Side side, Salad salad, Dessert dessert){
         this.name = name;
         this.entree = entree;
         this.side = side;

@@ -1,3 +1,4 @@
+
 /**
  * Class MenuItem
  * author : Yida Chen
@@ -20,9 +21,7 @@ public class MenuItem extends Object {
 
     @Override
     public String toString() {
-        return "MenuItem{" +
-                "name='" + name + '\'' +
-                '}';
+        return name + '\n' + description + '\n' + "Calories: " + calories + '\t' + "Price: " + price;
     }
 
     public String getName() {

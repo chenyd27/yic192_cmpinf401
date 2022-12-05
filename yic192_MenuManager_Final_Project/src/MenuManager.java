@@ -1,8 +1,3 @@
-/**
- * Class MenuManager
- * author : Yida Chen
- * created: 11/23/2022
- */
 
 
 import java.io.IOException;
@@ -61,10 +56,22 @@ public class MenuManager {
         return menuItem;
     }
     public Menu minCaloriesMenu(String name){
-        Entree[] entreelist = (Entree[]) entrees.toArray();
-        Side[] sidelist = (Side[])sides.toArray();
-        Salad[] saladlist = (Salad[])salads.toArray();
-        Dessert[] dessertlist = (Dessert[])desserts.toArray();
+        Entree[] entreelist = new Entree[entrees.size()];
+        for(int i = 0;i < entrees.size();i++){
+            entreelist[i] = entrees.get(i);
+        }
+        Side[] sidelist = new Side[sides.size()];
+        for(int i = 0;i < sides.size();i++){
+            sidelist[i] = sides.get(i);
+        }
+        Salad[] saladlist = new Salad[salads.size()];
+        for(int i = 0;i < salads.size();i++){
+            saladlist[i] = salads.get(i);
+        }
+        Dessert[] dessertlist = new Dessert[desserts.size()];
+        for(int i = 0;i < desserts.size();i++){
+            dessertlist[i] = desserts.get(i);
+        }
         Entree entree = (Entree) getTheMinItem(entreelist);
         Side side = (Side) getTheMinItem(sidelist);
         Salad salad = (Salad) getTheMinItem(saladlist);
@@ -73,10 +80,22 @@ public class MenuManager {
         return menu;
     }
     public Menu maxCaloriesMenu(String name){
-        Entree[] entreelist = (Entree[]) entrees.toArray();
-        Side[] sidelist = (Side[])sides.toArray();
-        Salad[] saladlist = (Salad[])salads.toArray();
-        Dessert[] dessertlist = (Dessert[])desserts.toArray();
+        Entree[] entreelist = new Entree[entrees.size()];
+        for(int i = 0;i < entrees.size();i++){
+            entreelist[i] = entrees.get(i);
+        }
+        Side[] sidelist = new Side[sides.size()];
+        for(int i = 0;i < sides.size();i++){
+            sidelist[i] = sides.get(i);
+        }
+        Salad[] saladlist = new Salad[salads.size()];
+        for(int i = 0;i < salads.size();i++){
+            saladlist[i] = salads.get(i);
+        }
+        Dessert[] dessertlist = new Dessert[desserts.size()];
+        for(int i = 0;i < desserts.size();i++){
+            dessertlist[i] = desserts.get(i);
+        }
         Entree entree = (Entree) getTheMaxItem(entreelist);
         Side side = (Side) getTheMaxItem(sidelist);
         Salad salad = (Salad) getTheMaxItem(saladlist);
