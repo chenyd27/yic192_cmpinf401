@@ -1,4 +1,9 @@
 
+/**
+ * Class Entree
+ * author : Yida Chen
+ * created: 12/04/2022
+ */
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -25,10 +30,10 @@ public class MenuManagerGUI {
     private DefaultListModel listModel = new DefaultListModel();
     private JList jList;
     private String selectElement = "";
-    private JComboBox entreeBox;
-    private JComboBox sideBox;
-    private JComboBox saladBox;
-    private JComboBox dessertBox;
+    private JComboBox entreeBox; // Entree selecting box
+    private JComboBox sideBox; // Side selecting box
+    private JComboBox saladBox; // Salad selecting box
+    private JComboBox dessertBox; // Dessert selecting box
 
 
 
@@ -86,6 +91,9 @@ public class MenuManagerGUI {
             }
         });
     }
+    /*
+     * Create the up-left panel
+     */
     private JPanel createPanelLeftUp(){
         // layout on the left up
         JPanel panelLeft_up = new JPanel(new GridLayout(5,1)); // the innermost
@@ -179,7 +187,10 @@ public class MenuManagerGUI {
         panelLeft_upUp.add(panelLeft_up,BorderLayout.CENTER);
         return panelLeft_upUp;
     }
-
+    
+    /*
+     * Create the down-left panel
+     */
     private JPanel createPanelLeftDown(){
         // layout on the left down
         JPanel panelLeft_downDown = new JPanel();
@@ -199,7 +210,10 @@ public class MenuManagerGUI {
         panelLeft_downDown.add(panelLeft_down,BorderLayout.CENTER);
         return panelLeft_downDown;
     }
-
+    
+    /*
+     * Create the right panel
+     */
     private JPanel createPanelRight(){
         JPanel out = new JPanel(new BorderLayout());
         JPanel title = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -234,6 +248,9 @@ public class MenuManagerGUI {
     public void setMenuList(List<Menu> menuList) {
         this.menuList = menuList;
     }
+    /*
+     * listen to button from the left panel
+     */
     class MyActionListener implements ActionListener{
         TextField input;
         @Override
@@ -260,6 +277,10 @@ public class MenuManagerGUI {
             subframe.add(panel);
         }
     }
+    
+    /*
+     * listen to the name typing
+     */
     class NameListener implements ActionListener{
         TextField input;
         JFrame subframe;
@@ -269,20 +290,27 @@ public class MenuManagerGUI {
         }
         @Override
         public void actionPerformed(ActionEvent e) {
-            menu.setName(input.getText());
-            Menu addMenu = new Menu(menu.getName(),menu.getEntree(),menu.getSide(),menu.getSalad(),menu.getDessert());
-            menuList.add(addMenu);
-            menuHashMap.put(addMenu.getName(),addMenu);
-            listModel.addElement(addMenu.getName());
-            input.setText("");
-            subframe.setVisible(false);
-            menu.setEntree(entreeHashMap.get((String)entreeBox.getSelectedItem()));
-            menu.setSide(sideHashMap.get((String)sideBox.getSelectedItem()));
-            menu.setSalad(saladHashMap.get((String)saladBox.getSelectedItem()));
-            menu.setDessert(dessertHashMap.get((String)dessertBox.getSelectedItem()));
+        	if(!input.getText().equals("Please input the name of the Menu") && !input.getText().equals("")) {
+        		menu.setName(input.getText());
+                Menu addMenu = new Menu(menu.getName(),menu.getEntree(),menu.getSide(),menu.getSalad(),menu.getDessert());
+                menuList.add(addMenu);
+                menuHashMap.put(addMenu.getName(),addMenu);
+                listModel.addElement(addMenu.getName());
+                input.setText("");
+                subframe.setVisible(false);
+                menu.setEntree(entreeHashMap.get((String)entreeBox.getSelectedItem()));
+                menu.setSide(sideHashMap.get((String)sideBox.getSelectedItem()));
+                menu.setSalad(saladHashMap.get((String)saladBox.getSelectedItem()));
+                menu.setDessert(dessertHashMap.get((String)dessertBox.getSelectedItem()));
+        	}else {
+                JOptionPane.showMessageDialog(null,"Empty name is not accepted.");
+        	}
         }
     }
-
+    
+    /*
+     * listen to the mouse click
+     */
     class MyMouseListener implements MouseListener  {
         @Override
         public void mouseClicked(MouseEvent event) {
@@ -307,7 +335,10 @@ public class MenuManagerGUI {
         @Override
         public void mouseExited(MouseEvent e) {}
     }
-
+    
+    /*
+     * listen to the right panel button
+     */
     class MyButtonListener implements ActionListener{
         JFrame subframe;
         Menu showMenu;
